@@ -1,6 +1,8 @@
 # Web-scraping-from-txt
 Scrapes information from html code within text files . Text files in here have been downloaded with UiPath automation.
 With UiPath i created a program that enters 2 websites , and looks for cars to rent under specific dates and cities . Rules of the dates is in '_regula.txt' and city name is the document name.
+After that it extracts the html of the page to a .txt file.
+( I tried using only Python but i got detected as a bot ) 
 
 
 
