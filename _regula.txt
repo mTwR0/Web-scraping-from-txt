@@ -1,44 +1,10 @@
-nume11- rentalcars : azi+2 -->azi+4
-nume12- rentalcars : azi+2 -->azi+7
-nume13- rentalcars : azi+2 -->azi+12
+city_name11 --> rentalcars website : today+2 -->today+4
+city_name12 --> rentalcars website : today+2 -->today+7
+city_name13 --> rentalcars website : today+2 -->today+12
 
-nume21- economy bookings : azi+2 -->azi+4
-nume22- economy bookings : azi+2 -->azi+7
-nume23- economy bookings : azi+2 -->azi+12
-
-
-
-Pentru carjet linkurile sunt la fel daca schimb data ...
-
-
-https://www.carjet.com/do/list/en?s=ee77deec-0dd1-4090-880e-fcb828c3b929&b=d525de59-1b59-457e-ac47-4e0522058b79
-https://www.carjet.com/do/list/en?s=ee77deec-0dd1-4090-880e-fcb828c3b929&b=d525de59-1b59-457e-ac47-4e0522058b79
-
-
-pentru Budapesta:
-
-10 - 15 sept
-https://www.carjet.com/do/list/en?s=23c5c3ba-d583-426b-a16d-429ca4e9451c&b=d525de59-1b59-457e-ac47-4e0522058b79
-20 -30 sept
-https://www.carjet.com/do/list/en?s=23c5c3ba-d583-426b-a16d-429ca4e9451c&b=d525de59-1b59-457e-ac47-4e0522058b79
-25 sept 1 oct
-https://www.carjet.com/do/list/en?s=23c5c3ba-d583-426b-a16d-429ca4e9451c&b=d525de59-1b59-457e-ac47-4e0522058b79
-30 sept 12 oct
-https://www.carjet.com/do/list/en?s=23c5c3ba-d583-426b-a16d-429ca4e9451c&b=d525de59-1b59-457e-ac47-4e0522058b79
-
-+ 22 sep --> 23 sep si 22 sep --> 23 oct au acelasi link , dar masinile se schimba
-
-incognito:
-20-30
-https://www.carjet.com/do/list/en?s=0f3b742b-dfd2-48c9-86d8-6a25bfdc8d29&b=de65869d-8661-4a2e-b0ae-1fb61471ee89
-15 25
-https://www.carjet.com/do/list/us?s=0f3b742b-dfd2-48c9-86d8-6a25bfdc8d29&b=de65869d-8661-4a2e-b0ae-1fb61471ee89
-
-incognito 2 :
-13-16 sep
-https://www.carjet.com/do/list/en?s=6b58879a-944a-469c-937e-c4ec41d78641&b=a4e4c295-996e-41f4-9cca-7c9e9333027e
-20-30 sep
-https://www.carjet.com/do/list/en?s=6b58879a-944a-469c-937e-c4ec41d78641&b=a4e4c295-996e-41f4-9cca-7c9e9333027e
+city_name21 --> economy bookings website : today+2 -->today+4
+city_name22 --> economy bookings website : today+2 -->today+7
+city_name23 --> economy bookings website : today+2 -->today+12
 
 
 
