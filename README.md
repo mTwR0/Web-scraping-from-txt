@@ -15,9 +15,3 @@ This Python script automates the extraction of car rental information from HTML 
 1. **Setup**: Ensure text files downloaded by UiPath are stored in the specified directories (`HTML_PATH` and `TXT_PATH`).
 2. **Execution**: Run the script to parse HTML data from text files and organize it into Excel spreadsheets.
 
-
-## Notes
-
-- UiPath automation is used to download HTML data into text files, which are then processed by this Python script to extract and format car rental information.
-- Modify path variables (`EXCEL_FILE_RENTALCARS`, `EXCEL_FILE_ECONOMY_BOOKINGS`) and data extraction rules as per your specific project requirements.
-- This script provides an efficient solution for automating data extraction from car rental websites while managing complexities related to web scraping and bot detection.
