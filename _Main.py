@@ -5,29 +5,10 @@ import os
 import re
 import openpyxl as px
 from openpyxl import load_workbook
-#   Explicatie
 
-
-# Pasul 1 - Uipath
-# --> Ruleaza proiect UiPath :C:\Users\Autonom\Documents\UiPath\Rentalcars.com AUTOMATION\HTML_extractor.xaml
-#               (linkurile pe care le acceseaza am luat sa fie zona aeroportului , nu orasul in sine)
-#       Proiectul intra pe RentalCars , dupa peEconomyBookings si cauta masinile valabile pe zilele din listZi ,listLuna ,listAn (listZi[0]-listZi[1],listZi[0]-listZi[2])
-#       Proiectul extrage HTML-ul de pe pagini si le pune in folder dupa regula :
-#           Rentalcars: nume11 : azi+2 -->azi+4 , nume12 : azi+2 -->azi+7 , nume13 : azi+2 -->azi+12
-#           Economy Bookings: nume21 : azi+2 -->azi+4 , nume22 : azi+2 -->azi+7 , nume23 : azi+2 -->azi+12
-
-# Pasul 2 - programul .py
+# programul .py
 # --> Cauta fisierele .txt in folder , si le sorteaza in listele rentalcars_files sau economybookings_files dupa regula 
 # --> Cauta in HTML tag-uri specifice dupa structura HTML de la site (vf _info.docx) si pune informatii ( marca, provider , transmisie,pret etc)  in excel
-# Pasul 3 - Uipath
-# --> Ruleaza proiect UiPath --> C:\Users\Autonom\Documents\UiPath\Rentalcars.com AUTOMATION\Ruleaza dupa python.xaml
-#       Proiectul ruleaza cod VB in excel si face JOIN-ul cu SIPP
-
-
-
-
-#initializare:
-#------------------------
 
 marca=[]
 provider=[] 
@@ -68,33 +49,6 @@ listLuna=[str((today+timedelta(days=2)).month),str((today+timedelta(days=4)).mon
 # output : ['9', '9', '9', '9']
 listAn=[str( (today+timedelta(days=2)).year ),str( (today+timedelta(days=4)).year ),str( (today+timedelta(days=7)).year ),str( (today+timedelta(days=12)).year )]
 #output: ['2023', '2023', '2023', '2023']
-
-
-#finalizare initializare
-#------------------------
-
-
-
-#prelucrare exceluri 
-
-#rentalcars
-
-
-
-
-
-
-
-
-
-
-
-
-#intra intr-un fisier, extrage info - umple listele - pune in lista de dict 
-
-
-#incepem pentru eco bk
-
 
 lista_fisiere=[]
 nr_fisier=0
@@ -368,16 +322,12 @@ for file in rentalcars_files:
     if nr_fisier==1 :
         result_df = pd.DataFrame(columns=EXCEL_HEADERS)
     for data_dict in out_list:
-        # Create a DataFrame from the current dictionary
         df = pd.DataFrame([data_dict])
-
-        # Append the current DataFrame to the result DataFrame
         result_df = pd.concat([result_df, df], ignore_index=True)
 
-    # Open the Excel file in append mode
     if  nr_fisier%3==0:
         with pd.ExcelWriter(EXCEL_FILE_RENTALCARS, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
-        # Write the result DataFrame to the Excel sheet with headers
+
          result_df.to_excel(writer, sheet_name=sheet_name, index=False)
          result_df = pd.DataFrame(columns=EXCEL_HEADERS)
 
@@ -389,94 +339,3 @@ print("Daca lista de fisiere nu e ordonata alfabetic dupa numele fisierelor a pu
 print("_______"*20)
 for item in lista_fisiere:
      print(item)
-
-
-
-
-
-
-
-
-
-#cod pentru carjet --- nu se schimba linkul in searchbar cand schimbi data deci nu poti seta prin link sa acceseze locatia X la o alta data
-# --> ca sa mearga trb sa pui html-ul de mana in documente text
-
-# nr_fisier=0
-# print("prelucrare HTML pentru CARJET")
-# with open("C:/Users/Autonom/Desktop/vscodeproj/Extract data from Rental sites/Carjet.txt","r" , encoding='utf-8') as f:
-#     html_content = f.read()
-#     doc=BeautifulSoup(html_content,"html.parser")
-
-# print("-"*20)
-# section =doc.find("section",class_="newcarlist price-per-day")
-# masini = section.find_all("article")
-# #masini=section.contents
-# x=1
-# nr=0
-# for art in masini:
-#     nr=nr+1
-#     if section:
-#         name=art.find("div",class_="cl--name")
-#         name=name.h2
-#         if(name):
-#             marca.append(name.get("title"))
-#         else:
-#             marca.append("Not Found")
-        
-#         #provider
-#         #prv=art.find("div",class_="cl--car")
-#         #prv=prv.find("div",class_="cl--car-container")
-#         #prv=prv.find("div",class_="cl--car-rent")
-#         prv=art.find("span",class_="cl--car-rent-info")
-#         prv=prv.strong
-#         if(prv):
-#             provider.append(prv.text)
-#         else:
-#             provider.append("Not Found")
-
-        
-#         #transmisie
-#         #tr=art.find("div",class_="cl--info")
-#         #tr=tr.ul
-#         tra=art.find("li",class_="tooltipBlanco serv sc-transm-auto")
-#         tr=art.find("li",class_="tooltipBlanco serv sc-transm")
-        
-#         if(tr):
-#             tr=tr.get("title")
-#             transmisie.append(tr)
-#         else:
-#             if(tra):
-#                 tra=tra.get("title")
-#                 transmisie.append(tra)
-#             else:
-#                 transmisie.append("Not Found")
-#         #pret
-#         #pr=art.find("div",class_="cl--action")
-#         #price pr-euros green special-price
-#         pr=art.find("span",class_="price pr-euros")
-#         prg=art.find("span",class_="price pr-euros green special-price")
-#         #print(pr)
-        
-#         if ( pr):
-#             pr=pr.text
-#             pret.append(pr.strip())
-#         else:
-#             if(prg):
-#                 prg=prg.text
-#                 pret.append(prg.strip())
-#             else:
-#                 pret.append("Not Found")
-
-# out_list=[]
-# for i in range(0,nr-1):
-#     output = {
-#         "marca": marca[i],
-#         "provider": provider[i],
-
-#         "transmisie": transmisie[i],
-#         "pret": pret[i]
-#     }
-#     out_list.append(output)
-
-
-
