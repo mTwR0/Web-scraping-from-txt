@@ -14,14 +14,7 @@ This Python script automates the extraction of car rental information from HTML 
 
 1. **Setup**: Ensure text files downloaded by UiPath are stored in the specified directories (`HTML_PATH` and `TXT_PATH`).
 2. **Execution**: Run the script to parse HTML data from text files and organize it into Excel spreadsheets.
-3. **Customization**: Adjust regex patterns (`pattern1` to `pattern4`) and HTML structure parsing rules to match variations in website layouts and content.
 
-## Requirements
-
-- Python 3.x
-- BeautifulSoup (`bs4`)
-- pandas
-- openpyxl
 
 ## Notes
 
